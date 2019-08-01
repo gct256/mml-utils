@@ -1,0 +1,7 @@
+extends:
+  - 'plugin:jest/recommended'
+
+rules:
+  # return type 省略可能
+  '@typescript-eslint/explicit-function-return-type':
+    - off
