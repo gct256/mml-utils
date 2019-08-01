@@ -45,4 +45,7 @@
 
 - MML ノードの型と種別定数
 
-## MML の定義
+## その他
+
+- [MML](/doc/mml.md)
+- [FM-BIOS](/doc/FMBIOS.md)
