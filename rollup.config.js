@@ -1,13 +1,13 @@
 import commonjs from 'rollup-plugin-commonjs';
 import typescript2 from 'rollup-plugin-typescript2';
-
-import pkg from './package.json';
+import autoExternal from 'rollup-plugin-auto-external';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 const base = {
   input: './src/index.ts',
   plugins: [
+    autoExternal(),
     commonjs({
       namedExports: {
         'src/parse/pegParser/pegParser.js': ['SyntaxError']
@@ -25,7 +25,6 @@ const base = {
       useTsconfigDeclarationDir: true
     })
   ],
-  external: ['fraction.js', 'chalk']
 };
 
 const targets = [

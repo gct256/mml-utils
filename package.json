@@ -1,0 +1,53 @@
+{
+  "name": "@gct256/mml-utils",
+  "version": "0.1.0",
+  "description": "The utilities for MML (Music Macro Language).",
+  "license": "MIT",
+  "scripts": {
+    "peg": "pegjs -o src/parse/pegParser/pegParser.js src/parse/pegParser/pegParser.pegjs",
+    "prebuild": "npm run peg",
+    "build": "NODE_ENV=production rollup -c",
+    "pretest": "npm run peg",
+    "test": "jest",
+    "preexample": "npm run peg",
+    "example": "ts-node --project tsconfig.json --compiler-options '{\"module\": \"commonjs\"}' example/example.ts",
+    "lint": "eslint --ext .ts src __tests__",
+    "prepublishOnly": "npm run build"
+  },
+  "main": "lib/index",
+  "types": "types/index.d.ts",
+  "jest": {
+    "testRegex": "/__tests__/(.*/)?test_.*\\.(tsx?|jsx?)$"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-syntax-class-properties": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.16",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.14.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "jest": "24.8.0",
+    "pegjs": "^0.10.0",
+    "prettier": "^1.18.2",
+    "rollup": "^1.17.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-typescript2": "^0.22.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "fraction.js": "^4.0.12"
+  }
+}
