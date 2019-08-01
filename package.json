@@ -49,5 +49,19 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "fraction.js": "^4.0.12"
-  }
+  },
+  "directories": {
+    "doc": "doc",
+    "example": "example",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gct256/mml-utils.git"
+  },
+  "author": "gct256+github@gmail.com",
+  "bugs": {
+    "url": "https://github.com/gct256/mml-utils/issues"
+  },
+  "homepage": "https://github.com/gct256/mml-utils#readme"
 }
